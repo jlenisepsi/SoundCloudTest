@@ -130,7 +130,7 @@ public class HttpServer {
                         audioInputStream = new FileInputStream(file);
                         long skippedBytes = audioInputStream.skip(start);
                         if (skippedBytes != start) {
-                            return("Error on skipped Bytes !")
+                            return("Error on skipped Bytes !");
                         }
                         Response response = newFixedLengthResponse(Response.Status.PARTIAL_CONTENT, getMimeType(audioFileToServe), audioInputStream, contentLength);
                         response.addHeader("Content-Length", contentLength + "");
